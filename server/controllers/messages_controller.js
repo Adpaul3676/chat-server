@@ -2,6 +2,7 @@ let messagesArr = [];
 let id = 0;
 
 module.exports = {
+
   create: (req, res) => {
     let {text, time} = req.body;
     messagesArr.push({id, text, time});
@@ -18,10 +19,10 @@ module.exports = {
     let {id} = req.params;
     let messageIndex = messagesArr.findIndex(message => message.id === +id);
     let message = messagesArr[messageIndex]
-
+    
     messagesArr[messageIndex] = {
       id: message.id,
-      text: text,
+      text: text || message.text,
       time: message.time
     }
 
