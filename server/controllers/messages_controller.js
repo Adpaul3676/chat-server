@@ -30,7 +30,7 @@ module.exports = {
 
   delete: (req, res) => {
     let {id} = req.params
-    let newArr = messagesArr.filter(message => message.id !== +id)
-    res.status(200).send(newArr)
+    let messagesArr = messagesArr.filter(message => message.id !== +id)
+    res.status(200).send(messagesArr)
   },
 }
