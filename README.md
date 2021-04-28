@@ -191,7 +191,7 @@ module.exports = {
 }
 ```
 
-The `create` method should create a new message object using `text` and `time` from the request body and also the global `id` variable. It should then push this new messsage object into the `messages` array. After a new message object is created, `id` should be incremented by one so that the previous `id` won't be used on any other future messages. This will effectively keep the `id` unique for every message. We'll then want to send the updated `messages` array.
+The `create` method should create a new message object using `text` and `time` from the request body and also the global `id` variable. It should then push this new message object into the `messages` array. After a new message object is created, `id` should be incremented by one so that the previous `id` won't be used on any other future messages. This will effectively keep the `id` unique for every message. We'll then want to send the updated `messages` array.
 
 ```js
 create: (req, res) => {

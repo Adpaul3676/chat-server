@@ -19,7 +19,8 @@ module.exports = {
     let {id} = req.params;
     let messageIndex = messagesArr.findIndex(message => message.id === +id);
     let message = messagesArr[messageIndex]
-    
+    console.log(message)
+
     messagesArr[messageIndex] = {
       id: message.id,
       text: text || message.text,
@@ -31,7 +32,7 @@ module.exports = {
 
   delete: (req, res) => {
     let {id} = req.params
-    let messagesArr = messagesArr.filter(message => message.id !== +id)
+    messagesArr = messagesArr.filter(message => message.id !== +id)
     res.status(200).send(messagesArr)
   },
 }
